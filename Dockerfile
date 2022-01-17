@@ -8,7 +8,7 @@ RUN dpkg -i packages-microsoft-prod.deb
 RUN rm packages-microsoft-prod.deb
 RUN apt-get update || : && apt-get install -y aspnetcore-runtime-6.0
 
-
+RUN apt-get update || : && apt-get install -y zip unzip
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 RUN unzip awscliv2.zip
 RUN ./aws/install
