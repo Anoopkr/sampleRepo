@@ -1,3 +1,3 @@
 FROM node:16.13.1-alpine
 
-RUN apk add -U subversion
+RUN apt-get update || : && apt-get install python -y
