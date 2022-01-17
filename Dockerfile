@@ -1,3 +1,3 @@
-FROM node:16.13.1-alpine
+FROM node:9-slim
 
-RUN yum update || : && yum install python -y
+RUN apt-get update || : && apt-get install python -y
