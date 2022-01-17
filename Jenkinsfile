@@ -6,6 +6,7 @@ pipeline {
                 sh 'node --version'
                 sh 'python --version'
                 sh 'dotnet --version'
+                sh 'aws --version'
             }
         }
     }
