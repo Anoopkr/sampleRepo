@@ -7,6 +7,7 @@ pipeline {
                 sh 'python --version'
                 sh 'dotnet --version'
                 sh 'aws --version'
+                sh 'git --version'
                 sh 'ls'
                 sh 'npm install --force'
             }
