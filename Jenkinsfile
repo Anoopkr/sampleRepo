@@ -2,8 +2,7 @@ pipeline {
     agent { dockerfile true }
     stages {
         stage('Test') {
-            steps {
-                cleanWs()
+            steps {                
                 sh 'node --version'
                 sh 'python --version'
                 sh 'dotnet --version'
