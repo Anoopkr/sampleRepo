@@ -8,7 +8,8 @@ pipeline {
                 sh 'python --version'
                 sh 'dotnet --version'
                 sh 'aws --version'
-                sh 'npm install'
+                sh 'ls'
+                sh 'npm install --force'
             }
         }
 //         stage('Verify AWS'){
