@@ -19,7 +19,7 @@ RUN ./aws/install
 # RUN add-apt-repository ppa:git-core/ppa -y
 # RUN apt-get update || : && apt-get install -y git
 
-
+RUN apt-get update || : && apt-get install -y build-essential
 RUN wget https://github.com/git/git/archive/refs/tags/v2.34.1.zip -O git.zip
 RUN unzip git.zip
 WORKDIR git-*
