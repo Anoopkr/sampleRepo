@@ -14,7 +14,12 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 RUN unzip awscliv2.zip
 RUN ./aws/install
 
+RUN apt remove --purge --auto-remove -y git
 RUN apt-get update || : && apt-get install -y software-properties-common
-RUN add-apt-repository ppa:git-core/ppa
+RUN add-apt-repository ppa:git-core/ppa -y
 RUN apt-get update || : && apt-get install -y git
 
+
+# RUN wget --no-certificate-check https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.$build.tar.gz
+# RUN tar -xzvf git-$version.$build.tar.gz
+# WORKDIR git-$version.$build/
