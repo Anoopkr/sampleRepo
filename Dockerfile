@@ -24,9 +24,9 @@ RUN apt-get update || : && apt-get install -y autoconf
 RUN apt-get update || : && apt-get install -y zlib1g-dev
 RUN apt-get update || : && apt-get install -y asciidoc 
 RUN apt-get update || : && apt-get install -y docbook2x
-RUN wget https://github.com/git/git/archive/refs/tags/v2.34.1.zip -O git.zip
-RUN unzip git.zip
-WORKDIR git-*
+RUN wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.4.5.tar.gz
+RUN tar -zxf git-2.4.5.tar.gz
+WORKDIR git-2.4.5
 RUN make configure
 RUN ./configure --prefix=/usr
 RUN make all doc info
