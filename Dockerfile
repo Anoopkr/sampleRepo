@@ -31,7 +31,7 @@ WORKDIR git-2.4.5
 RUN make configure
 RUN ./configure --prefix=/usr
 RUN make all doc info
-RUN make install install-doc install-html install-info
+RUN make install install-doc install-html
 
 # RUN wget --no-certificate-check https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.$build.tar.gz
 # RUN tar -xzvf git-$version.$build.tar.gz
