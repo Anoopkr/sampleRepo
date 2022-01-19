@@ -20,11 +20,17 @@ RUN ./aws/install
 # RUN apt-get update || : && apt-get install -y git
 
 RUN apt-get update || : && apt-get install -y build-essential
+RUN apt-get update || : && apt-get install -y autoconf
+RUN apt-get update || : && apt-get install -y zlib1g-dev
+RUN apt-get update || : && apt-get install -y asciidoc 
+RUN apt-get update || : && apt-get install -y docbook2x
 RUN wget https://github.com/git/git/archive/refs/tags/v2.34.1.zip -O git.zip
 RUN unzip git.zip
 WORKDIR git-*
-RUN make prefix=/usr/local all
-RUN make prefix=/usr/local install
+RUN make configure
+RUN ./configure --prefix=/usr
+RUN make all doc info
+RUN make install install-doc install-html install-info
 
 # RUN wget --no-certificate-check https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.$build.tar.gz
 # RUN tar -xzvf git-$version.$build.tar.gz
