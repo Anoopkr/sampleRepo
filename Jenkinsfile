@@ -9,7 +9,7 @@ pipeline {
                 sh 'aws --version'
                 sh 'git --version'
                 sh 'ls'
-                sh 'npm install --force'
+//                 sh 'npm install --force'
             }
         }
 //         stage('Verify AWS'){
