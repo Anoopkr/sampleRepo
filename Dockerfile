@@ -14,5 +14,7 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 RUN unzip awscliv2.zip
 RUN ./aws/install
 
-
+RUN apt-get update || : && apt-get install software-properties-common
+RUN apt-add-repository ppa:git-core/ppa
 RUN apt-get update || : && apt-get install -y git
+
